@@ -1,15 +1,17 @@
 mediaList = []
 
 def listaNotasValid(listaNotas):
-    for i in range(len(listaNotas)):
-        if (type(listaNotas[i]) == str or listaNotas[i] <= -1):
-            #print(f"False, {listaNotas[i]}")
-            return False, listaNotas[i]
-        else: 
-            continue
+    if (len(listaNotas) != 0):
+        for i in range(len(listaNotas)):
+            if (type(listaNotas[i]) == str or listaNotas[i] <= -1):
+                #print(f"False, {listaNotas[i]}")
+                return False, listaNotas[i]
+            else: 
+                continue
 
-    #print(f"True, {listaNotas}")
-    return True
+        #print(f"True, {listaNotas}")
+        return True
+    else: print(f"Lista Inválida de Notas, tente novamente.")
 
 
 def calcMedia(listaNotas, aluno):
@@ -63,6 +65,6 @@ def rankAlunos():
         i -= 1
     '''
 
-    print(f"\n\t « Posições Finais! »")
+    print(f"\n « Posições Finais! »")
     for i in range(len(reorderMediaList)):
         print(f"\t{i+1}° - {reorderMediaList[i][0]} × MÉDIA FINAL - {reorderMediaList[i][1]}\n")
