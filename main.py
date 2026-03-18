@@ -41,7 +41,7 @@ while (resp != 0):
         alunos.append(aluno7) # Adiciono alunos de teste
         print(f"{len(alunos)} Alunos adicionados")
         resp = 0
-    else: print(f"Opção inválida selecionada tente novamente")
+    else: print(f"Opção inválida selecionada, tente novamente")
 
 # É como se eu fizesse uma lista 2D, que no final chama somente os nomes de cada um dos alunos
 '''
