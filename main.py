@@ -6,14 +6,17 @@ aluno0 = [("Jorge"), ([8, 7, 5, 9, 6])]
 aluno1 = [("Maikon"), ([8, 8, 7, 6, 4])]
 aluno2 = [("Séphey"), ([6, 9, 4, 8, 7])]
 aluno3 = [("Raphael"), ([6, 6, 7, 4, 9])]
+aluno4 = [("Cléberc"), ([5, 6, 7, 8, 9])]
 
-# Lista Incorreta
-aluno4 = [("Jorge"), ([8, 6, 5, 9, 6])]
-aluno5 = [("Maikon"), ([8, "ai", 7, 6, 4])] # Vai parar aqui... teoricamente
+# Lista error for sure >:)
+aluno5 = [("Jorge"), ([8, 6, 5, 9, 6])]
 aluno6 = [("Séphey"), ([6, 9, 4, ":D", 7])]
 aluno7 = [("Raphael"), ([6, False, 7, 4, 9])]
+aluno8 = [("Cléberc"), ([5, 6, 7, 8, 9])]
+aluno9 = [("Maikon"), ([8, "ai", 7, 6, 4])] # Vai parar aqui... teoricamente
 
 nomProf = input(f"Logar como: (Nome do Professor)\n >>")
+ranking = []
 
 print(f" «« Bem-vindo professor {nomProf}. »» ")
 
@@ -27,6 +30,7 @@ while (resp != 0):
         alunos.append(aluno1)
         alunos.append(aluno2) 
         alunos.append(aluno3) # Adiciono alunos de teste
+        alunos.append(aluno4)
         print(f"{len(alunos)} Alunos adicionados")
         resp = 0
     elif (resp == 2):
@@ -52,4 +56,6 @@ while (resp != 0):
 #Calculando a média dos alunos.
 for i in range(len(alunos)):
     print(f"Aluno {alunos[i][0]}")
-    print(f"{procc.calcMedia(alunos[i][1])}\n")
+    print(f"Análise do Aluno: (MÉDIA / RESOLUÇÃO) \n\t{procc.calcMedia(alunos[i][1], alunos[i][0])}\n") # Isso aqui foi alterado para comportar o ranking
+    
+procc.rankAlunos()
